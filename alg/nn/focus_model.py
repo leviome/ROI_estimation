@@ -90,7 +90,7 @@ class ROIEstimator(nn.Module):
             return loss
         else:
             # feature_map = F.avg_pool2d(feature_map, kernel_size=32, stride=32)
-            feature_map = F.avg_pool2d(feature_map, kernel_size=2, stride=1)
+            feature_map = F.avg_pool2d(feature_map, kernel_size=3, stride=1)
             return feature_map
 
     def gaussian_blur_gt(self, points, fm, blur=True):
